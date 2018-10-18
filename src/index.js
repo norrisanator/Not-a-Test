@@ -3,17 +3,24 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
-import './styles.css'
+import styled from 'styled-components'
 
 import App from './containers/App'
 import rootReducer from './state/reducers'
+
+const StyledApp = styled.div`
+  text-align: right;
+  font-family: 'Verdana', sans-serif;
+`
 
 const state = createStore(rootReducer)
 
 const rootElement = document.getElementById('root')
 ReactDOM.render(
   <Provider store={state}>
-    <App />
+    <StyledApp>
+      <App />
+    </StyledApp>
   </Provider>,
   rootElement
 )
